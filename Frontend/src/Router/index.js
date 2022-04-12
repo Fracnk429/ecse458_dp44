@@ -5,8 +5,9 @@ import Registerpage from '../Pages/Registerpage'
 import Resourcepage from '../Pages/Resourcepage'
 import { BrowserRouter,Routes,Route } from "react-router-dom"
 
+
 const BaseRouter = ()=>{
-    return(
+    return( 
         <BrowserRouter>
         <Routes>
             <Route path="/" element={<App />}>

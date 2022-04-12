@@ -1,4 +1,4 @@
-// can send ajax request ,return promise
+// can send ajax request ,return promise object
 import axios from 'axios'
 
 export default function ajax(url,data={},type='GET'){

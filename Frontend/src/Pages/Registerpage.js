@@ -5,20 +5,28 @@ import '../Css/register.css';
 
 import React, { Component } from 'react'
 
+import { connect}from 'react-redux'
+
+import {register} from '../redux/actions'
 
 
-export default class Registerpage extends Component {
+
+
+ class Registerpage extends Component {
    
-  constructor(props){
-    super(props)
-    this.state ={
+   state ={
       name : '',
       email:'',
       password:'',
       password2:'',
       type:'',
     }
-  }
+    register= ()=>{
+       //console.log(this.state)
+       //console.log(this.props.register(this.state) )
+       this.props.register(this.state)
+    }
+  
   onChange(e){
     console.log(e.target.name)
     this.setState({
@@ -26,9 +34,6 @@ export default class Registerpage extends Component {
     })
   }
 
-    register= ()=>{
-        console.log(this.state)
-    }
 
     handleChange=(name,val)=>{
         this.setState(
@@ -37,10 +42,6 @@ export default class Registerpage extends Component {
             }
         )
     }
-
-    
-    
-    
     
   render() {
       const {type} =this.state
@@ -88,3 +89,9 @@ export default class Registerpage extends Component {
 }
 
  
+
+
+export default connect(
+    state=>({}),
+    {register}
+)(Registerpage)
